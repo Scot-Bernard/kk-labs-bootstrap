@@ -38,10 +38,10 @@ Create/attach a tmux session named work with windows: work, info, edit.
 
 ## Quick start (100 Days of DevOps lab)
 
-Run directly (non-interactive):
+Run directly:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Scot-Bernard/kk-labs-bootstrap/main/scripts/100-days-devops/bootstrap.sh | bash
+curl -fsSLo bootstrap.sh https://raw.githubusercontent.com/Scot-Bernard/kk-labs-bootstrap/main/scripts/100-days-devops/bootstrap.sh && bash bootstrap.sh
 ```
 This will:
 
