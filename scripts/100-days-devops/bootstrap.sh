@@ -13,6 +13,7 @@ declare -r -a PKGS=(vim less tmux)
 
 # --- Prompt for Ansible -------------------------------------------------------
 read -rp "Install Ansible? [y/N]: " ansible_choice
+ansible_choice="${ansible_choice:-N}"
 if [[ "$ansible_choice" =~ ^[Yy]$ ]]; then
   sudo dnf install ansible -y
 fi
