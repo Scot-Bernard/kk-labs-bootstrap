@@ -31,3 +31,4 @@ ensure_line_once() {
 }
 
 ensure_line_once "$TMUX_CONF_LINE" "$TMUX_CONF"
+

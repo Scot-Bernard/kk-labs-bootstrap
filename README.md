@@ -6,6 +6,7 @@ Start with Kubernetes shell conveniences (tmux/vim/less + a ready-to-use tmux se
 ## Contents
 
 - `scripts/k8s/bootstrap.sh`: Installs `tmux`, `vim`, and `less` using **YUM**, ensures tmux uses `xterm`, and opens a 3-window session (`work`, `info`, `edit`).
+- `scripts/100-days-devops/bootstrap.sh`: Installs `tmux`, `vim`, and `less` using **DNF**, optionally installs Ansible, and ensures tmux uses `xterm`.
 
 Planned structure for more lab types:
 
@@ -34,6 +35,22 @@ Install tmux, vim, and less via yum -y.
 Ensure ~/.tmux.conf contains set -g default-terminal "xterm".
 
 Create/attach a tmux session named work with windows: work, info, edit.
+
+## Quick start (100 Days of DevOps lab)
+
+Run directly (non-interactive):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Scot-Bernard/kk-labs-bootstrap/main/scripts/100-days-devops/bootstrap.sh | bash
+```
+This will:
+
+Prompt to install Ansible and, if confirmed, installs it via dnf.
+
+Install tmux, vim, and less via dnf -y.
+
+Ensure ~/.tmux.conf contains set -g default-terminal "xterm".
+
 
 ## Assumptions
 
