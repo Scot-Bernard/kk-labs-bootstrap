@@ -21,7 +21,7 @@ kk-labs-bootstrap/
 └─ LICENSE                # (MIT recommended)
 ```
 
-## Quick start (K8s lab)
+## K8s lab
 
 Run directly (non-interactive):
 
@@ -36,7 +36,7 @@ Ensure ~/.tmux.conf contains set -g default-terminal "xterm".
 
 Create/attach a tmux session named work with windows: work, info, edit.
 
-## Quick start (100 Days of DevOps lab)
+## 100 Days of DevOps lab
 
 Run directly:
 
@@ -51,6 +51,21 @@ Install tmux, vim, and less via dnf -y.
 
 Ensure ~/.tmux.conf contains set -g default-terminal "xterm".
 
+## Terraform
+
+Run directly:
+
+Run directly (non-interactive):
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/Scot-Bernard/kk-labs-bootstrap/main/scripts/terraform/bootstrap.sh | bash
+```
+
+This will:
+
+Install the official Hashicorp Terraform plugin in Visual Studio Code server.
+
+Install less.
 
 ## Assumptions
 
