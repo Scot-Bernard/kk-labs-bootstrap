@@ -7,9 +7,16 @@
 set -euo pipefail
 
 # --- Config -------------------------------------------------------------------
+declare -r LAB_SUDO_PASS="mjolnir123"
 declare -r TMUX_CONF="${HOME}/.tmux.conf"
 declare -r TMUX_CONF_LINE='set -g default-terminal "xterm"'
-declare -r -a PKGS=(vim less tmux)
+declare -r -a PKGS=(vim less tmux git)
+
+# --- Helpers ------------------------------------------------------------------
+sudo_run() {
+  # Always supply password non-interactively; suppress sudo prompt text with -p ''
+  printf '%s\n' "$LAB_SUDO_PASS" | sudo -S -p '' "$@"
+}
 
 # --- Prompt for Ansible -------------------------------------------------------
 read -rp "Install Ansible? [y/N]: " ansible_choice
@@ -19,7 +26,7 @@ if [[ "$ansible_choice" =~ ^[Yy]$ ]]; then
 fi
 
 # --- Install packages ---------------------------------------------------------
-sudo dnf install -y "${PKGS[@]}"
+sudo_run dnf install -y "${PKGS[@]}"
 
 # --- Configure tmux -----------------------------------------------------------
 ensure_line_once() {

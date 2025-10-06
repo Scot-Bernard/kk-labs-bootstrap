@@ -33,7 +33,7 @@ ensure_line_once() {
 }
 
 # --- Install packages ---------------------------------------------------------
-sudo_run yum -y install "${PKGS[@]}"
+sudo_run dnf install -y "${PKGS[@]}"
 
 # --- Configure tmux -----------------------------------------------------------
 ensure_line_once "$TMUX_CONF_LINE" "$TMUX_CONF"
